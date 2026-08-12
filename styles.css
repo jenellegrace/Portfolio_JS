@@ -234,7 +234,8 @@ em.medium{ font-family:'Inter', -apple-system, 'Helvetica Neue', Arial, sans-ser
   .hero-grid{ grid-template-columns:1fr; }
   .hero-meta{ border-left:none; border-top:1px solid var(--line); padding-left:0; padding-top:16px; }
   .specs-panel{ grid-template-columns:1fr 1fr; }
-  .specs-panel div{ border-bottom:1px solid var(--line); padding:14px 16px; }
+  .specs-panel div{ border-bottom:1px solid var(--line); border-right:none; padding:14px 16px; }
+  .specs-panel div:nth-child(odd){ padding-left:0; }
   .media-block.pair{ grid-template-columns:1fr; }
   .media-block.row{ flex-direction:column; }
   .media-block.row figure{ flex-grow:0; flex-basis:auto; width:100%; }
@@ -254,6 +255,7 @@ em.medium{ font-family:'Inter', -apple-system, 'Helvetica Neue', Arial, sans-ser
   nav a{ font-size:0.75rem; }
   .index-list a{ font-size:1rem; }
   .specs-panel{ grid-template-columns:1fr; }
+  .specs-panel div{ padding-left:0; }
   .project-nav{ flex-direction:column; gap:18px; }
   .project-nav .next{ text-align:left; }
 }
@@ -281,6 +283,21 @@ em.medium{ font-family:'Inter', -apple-system, 'Helvetica Neue', Arial, sans-ser
   transition:opacity .2s ease; font-family:inherit;
 }
 .lightbox-close:hover{ opacity:1; }
+.lightbox-nav{
+  position:fixed; top:50%; transform:translateY(-50%);
+  width:56px; height:56px; border-radius:50%; border:1px solid rgba(255,255,255,0.3);
+  background:rgba(255,255,255,0.08); color:#fff; font-size:2rem; line-height:1;
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  z-index:1001; opacity:0.8; transition:opacity .2s ease, background .2s ease;
+}
+.lightbox-nav:hover{ opacity:1; background:rgba(255,255,255,0.18); }
+.lightbox-nav.prev{ left:20px; }
+.lightbox-nav.next{ right:20px; }
+@media (max-width:640px){
+  .lightbox-nav{ width:44px; height:44px; font-size:1.6rem; }
+  .lightbox-nav.prev{ left:8px; }
+  .lightbox-nav.next{ right:8px; }
+}
 .lightbox-hint{
   position:fixed; bottom:22px; left:50%; transform:translateX(-50%);
   color:rgba(255,255,255,0.55); font-size:0.72rem; letter-spacing:0.04em;
