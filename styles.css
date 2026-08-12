@@ -241,8 +241,10 @@ em.medium{ font-family:'Inter', -apple-system, 'Helvetica Neue', Arial, sans-ser
   .media-block.side-text{ flex-direction:column; gap:20px; align-items:stretch; }
   .media-block.split{ flex-direction:column; gap:20px; }
   .media-block.split .col, .media-block.split .text-col{ max-width:100%; flex:none; }
-  .media-block.side-text img{ width:100%; height:auto; max-width:100%; flex:none; }
-  .media-block.side-text .cap{ max-width:100%; flex:none; }
+  .media-block.side-text img,
+  .media-block.side-text.half img{ width:100%; height:auto; max-width:100%; flex:none; }
+  .media-block.side-text .cap,
+  .media-block.side-text.half .cap{ max-width:100%; flex:none; }
   .media-block.gallery{ grid-template-columns:1fr; }
   nav ul{ gap:18px; }
 }
